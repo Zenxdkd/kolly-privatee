@@ -7,7 +7,7 @@ getgenv().DNS = {
     },
     FOV = {
         Visible = false,
-        Radius = 20
+        Radius = 62
     },
     Tracer = {
         Key = "C",
