@@ -32,7 +32,7 @@ local Player = game:GetService("Players").LocalPlayer
             local Mouse = Player:GetMouse()
             local SpeedGlitch = false
             Mouse.KeyDown:Connect(function(Key)
-                if getgenv().Gorus.Macro.Type == "Normal" and getgenv().Gorus.Macro.Enabled == true and Key == getgenv().Gorus.Macro.Keybind then
+                if getgenv().DNS.Macro.Type == "Normal" and getgenv().DNS.Macro.Enabled == true and Key == getgenv().DNS.Macro.Keybind then
                     SpeedGlitch = not SpeedGlitch
                     if SpeedGlitch == true then
                         repeat game:GetService("RunService").Heartbeat:wait()
@@ -59,7 +59,7 @@ local Player = game:GetService("Players").LocalPlayer
             local Mouse = Player:GetMouse()
             local SpeedGlitch = false
             Mouse.KeyDown:Connect(function(Key)
-                if getgenv().Gorus.Macro.Type == "Shift" and getgenv().Gorus.Macro.Enabled == true and Key == getgenv().Gorus.Macro.Keybind then
+                if getgenv().DNS.Macro.Type == "Shift" and getgenv().DNS.Macro.Enabled == true and Key == getgenv().DNS.Macro.Keybind then
                     SpeedGlitch = not SpeedGlitch
                     if SpeedGlitch == true then
                         repeat game:GetService("RunService").Heartbeat:wait()
