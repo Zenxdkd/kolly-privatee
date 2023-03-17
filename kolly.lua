@@ -25,7 +25,7 @@ getgenv().DNS = {
 
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/matas3535/PoopLibrary/main/Library.lua"))() -- Could Also Save It In Your Workspace And Do loadfile("Library.lua")()
 
-local Window = Library:New({Name = "*_* | KLOX CAMLOCK | PRIVATE", Size = Vector2.new(489, 570), Accent = Color3.fromRGB(25, 240, 100)})
+local Window = Library:New({Name = "*_* | KLOX CAMLOCK | PRIVATE", Size = Vector2.new(489, 570), Accent = Color3.fromRGB(50, 50, 50)})
 --
 local Aimbot = Window:Page({Name = "Aimbot"})
 local Settings = Window:Page({Name = "Settings"})
