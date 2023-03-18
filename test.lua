@@ -2,8 +2,8 @@ getgenv().DNS = {
     Silent = {
         Enabled = true,
         Part = "HumanoidRootPart",
-        Pred = 0.119,
-        ClosestPart = true,
+        Pred = 0.11,
+        ClosestPart = false,
     },
     FOV = {
         Visible = false,
@@ -11,7 +11,7 @@ getgenv().DNS = {
     },
     Tracer = {
         Key = "C",
-        Enabled = true,
+        Enabled = false,
         Pred = 0.01,
         Part = "HumanoidRootPart",
         Smoothness = 0.009
@@ -21,65 +21,134 @@ getgenv().DNS = {
         Shake = false,
         ShakeValue = 0.58
     },
-    Macro = {
-        ["Enabled"] = true,
-        ["Keybind"] = "q", 
-        ["Type"] = "Normal",
 }
 
---- macro
-local Player = game:GetService("Players").LocalPlayer
-            local Mouse = Player:GetMouse()
-            local SpeedGlitch = false
-            Mouse.KeyDown:Connect(function(Key)
-                if getgenv().DNS.Macro.Type == "Normal" and getgenv().DNS.Macro.Enabled == true and Key == getgenv().DNS.Macro.Keybind then
-                    SpeedGlitch = not SpeedGlitch
-                    if SpeedGlitch == true then
-                        repeat game:GetService("RunService").Heartbeat:wait()
-                            keypress(0x49)
-                            game:GetService("RunService").Heartbeat:wait()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/matas3535/PoopLibrary/main/Library.lua"))() -- Could Also Save It In Your Workspace And Do loadfile("Library.lua")()
 
-                            keypress(0x4F)
-                            game:GetService("RunService").Heartbeat:wait()
+local Window = Library:New({Name = "*_* | KLOX CAMLOCK | PRIVATE", Size = Vector2.new(489, 570), Accent = Color3.fromRGB(161, 165, 162)})
+--
+local Aimbot = Window:Page({Name = "Aimbot"})
+local Settings = Window:Page({Name = "Settings"})
+--
+local uwuAimbot = Aimbot:Section({Name = "Main", Side = "Left"})
+local uwuMisc = Aimbot:Section({Name = "Misc", Side = "Right"})
+local uwuSettings = Aimbot:Section({Name = "Settings", Side = "Left"})
+--
+local Settings_Main = Settings:Section({Name = "Main", Side = "Left"})
+-- // Aimbot
+uwuAimbot:Toggle({
+Name = "Enabled",
+Default = false,
+Pointer = "AimbotMain_Enabled",
+Callback = function(v)
+print(v)
+getgenv().DNS.Tracer.Enabled = v  
+    
+end
+})
 
-                            keyrelease(0x49)
-                            game:GetService("RunService").Heartbeat:wait()
+uwuAimbot:Toggle({
+Name = "ShowFov",
+Default = false,
+Pointer = "AimbotMain_Enabled",
+Callback = function(v)
+print(v)
+getgenv().DNS.FOV["Visible"] = v  
+        
+end
+})
 
-                            keyrelease(0x4F)
-                            game:GetService("RunService").Heartbeat:wait()
-
-                        until SpeedGlitch == false
-                    end
-                end
-            end)
+uwuMisc:Toggle({
+Name = "Shake",
+Default = false,
+Pointer = "Shake_Enabled",
+Callback = function(v)
+print(v)
+getgenv().DNS.Misc.Shake = v  
             
-            
-            
-            local Player = game:GetService("Players").LocalPlayer
-            local Mouse = Player:GetMouse()
-            local SpeedGlitch = false
-            Mouse.KeyDown:Connect(function(Key)
-                if getgenv().DNS.Macro.Type == "Shift" and getgenv().DNS.Macro.Enabled == true and Key == getgenv().DNS.Macro.Keybind then
-                    SpeedGlitch = not SpeedGlitch
-                    if SpeedGlitch == true then
-                        repeat game:GetService("RunService").Heartbeat:wait()
+end
+})
 
-                            keypress(0xA0)
-                            game:GetService("RunService").Heartbeat:wait()
+uwuMisc:Toggle({
+Name = "UnlockOnDeath",
+Default = false,
+Pointer = "UnlockOnDeath_Enabled",
+Callback = function(v)
+print(v)
+getgenv().DNS.Misc.UnlockedOnDeath = v  
+                
+end
+})
 
-                            keypress(0xA0)
-                            game:GetService("RunService").Heartbeat:wait()
+uwuSettings:Slider({Name = "Smoothness",
+Minimum = 0.001,
+Maximum = 1.5,
+Default = 0.014,
+Decimals = 0.001,
+Pointer = "AimbotMain_Smoothness",
+Callback = function(v)
+getgenv().DNS.Tracer.Smoothness = v
+ 
+end  
+})
 
-                            keyrelease(0xA0)
-                            game:GetService("RunService").Heartbeat:wait()
+uwuSettings:Slider({Name = "FOV Radius",
+Minimum = 0.01,
+Maximum = 100,
+Default = 15.5,
+Decimals = 0.01,
+Pointer = "AimbotMain_Radius",
+Callback = function(v)
+getgenv().DNS.FOV["Radius"] = v  
+ 
+end  
+})
 
-                            keyrelease(0xA0)
-                            game:GetService("RunService").Heartbeat:wait()
+uwuSettings:Slider({Name = "Shake Value",
+Minimum = 0.5,
+Maximum = 100,
+Default = 0.58,
+Decimals = 0.001,
+Pointer = "AimbotMain_Booty",
+Callback = function(v)
+getgenv().DNS.Misc.ShakeValue = v
+  
+end  
+})
 
-                        until SpeedGlitch == false
-                    end
-                end
-            end)
+uwuSettings:Slider({Name = "Tracer Prediction",
+Minimum = 0.001,
+Maximum = 10,
+Default = 0.1,
+Decimals = 0.001,
+Pointer = "AimbotMain_Booty",
+Callback = function(v)
+getgenv().DNS.Tracer.Pred = v
+  
+end  
+})
+
+uwuSettings:Slider({Name = "Silent Prediction",
+Minimum = 0.10,
+Maximum = 0.195,
+Default = 0.135,
+Decimals = 0.001,
+Pointer = "AimbotMain_Booty",
+Callback = function(v)
+getgenv().DNS.Misc.ShakeValue = v
+  
+end  
+})
+
+
+Settings_Main:ConfigBox({})
+Settings_Main:ButtonHolder({Buttons = {{"Load", function() end}, {"Save", function() end}}})
+Settings_Main:Label({Name = "Unloading will fully unload\neverything, so save your\nconfig before unloading.", Middle = true})
+Settings_Main:Button({Name = "Unload", Callback = function() Window:Unload() end})
+-- // Initialisation
+Window:Initialize()
+
+
 
 --- the code shit
 
