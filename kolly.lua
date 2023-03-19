@@ -83,7 +83,7 @@ end
 uwuSettings:Slider({Name = "Smoothness",
 Minimum = 0.001,
 Maximum = 1.5,
-Default = 0.04,
+Default = 0.047,
 Decimals = 0.001,
 Pointer = "AimbotMain_Smoothness",
 Callback = function(v)
@@ -119,7 +119,7 @@ end
 uwuSettings:Slider({Name = "Tracer Prediction",
 Minimum = 0.001,
 Maximum = 10,
-Default = 0.220,
+Default = 0.200,
 Decimals = 0.001,
 Pointer = "AimbotMain_Booty",
 Callback = function(v)
