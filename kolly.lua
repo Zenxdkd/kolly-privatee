@@ -83,7 +83,7 @@ end
 uwuSettings:Slider({Name = "Smoothness",
 Minimum = 0.001,
 Maximum = 1.5,
-Default = 0.014,
+Default = 0.4,
 Decimals = 0.001,
 Pointer = "AimbotMain_Smoothness",
 Callback = function(v)
@@ -95,7 +95,7 @@ end
 uwuSettings:Slider({Name = "FOV Radius",
 Minimum = 0.01,
 Maximum = 100,
-Default = 15.5,
+Default = 20,
 Decimals = 0.01,
 Pointer = "AimbotMain_Radius",
 Callback = function(v)
@@ -119,7 +119,7 @@ end
 uwuSettings:Slider({Name = "Tracer Prediction",
 Minimum = 0.001,
 Maximum = 10,
-Default = 0.1,
+Default = 0.169,
 Decimals = 0.001,
 Pointer = "AimbotMain_Booty",
 Callback = function(v)
@@ -131,7 +131,7 @@ end
 uwuSettings:Slider({Name = "Silent Prediction",
 Minimum = 0.10,
 Maximum = 0.195,
-Default = 0.135,
+Default = 0.142,
 Decimals = 0.001,
 Pointer = "AimbotMain_Booty",
 Callback = function(v)
