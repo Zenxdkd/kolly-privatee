@@ -23,7 +23,7 @@ getgenv().KLOX = {
         Radius = 20
     },
     Tracer = {
-        Key = "C",
+        Key = "Q",
         Enabled = true,
         Pred = 0.01,
         Part = "HumanoidRootPart",
