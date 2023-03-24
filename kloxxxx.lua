@@ -30,7 +30,6 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/matas
 local Window = Library:New({Name = "| KLOX Private | uwu >.<  ", Size = Vector2.new(489, 570), Accent = Color3.fromRGB(7, 0, 255)})
 --
 local Aimbot = Window:Page({Name = "Aimbot"})
-local Settings = Window:Page({Name = "Settings"})
 --
 local uwuAimbot = Aimbot:Section({Name = "Main", Side = "Left"})
 local uwuMisc = Aimbot:Section({Name = "Misc", Side = "Right"})
@@ -142,11 +141,6 @@ getgenv().KLOX.Misc.ShakeValue = v
 end  
 })
 
-
-Settings_Main:ConfigBox({})
-Settings_Main:ButtonHolder({Buttons = {{"Load", function() end}, {"Save", function() end}}})
-Settings_Main:Label({Name = "Unloading will fully unload\neverything, so save your\nconfig before unloading.", Middle = true})
-Settings_Main:Button({Name = "Unload", Callback = function() Window:Unload() end})
 -- // Initialisation
 Window:Initialize()
 
