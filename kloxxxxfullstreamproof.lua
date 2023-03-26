@@ -22,7 +22,7 @@ getgenv().KLOX = {
         ShakeValue = 45
     },
     Macro = {
-        Enabled = false,
+        Enabled = true,
         Keybind = "x"
     },
 }
