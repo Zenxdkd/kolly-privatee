@@ -7,12 +7,12 @@ getgenv().KLOX = {
     },
     FOV = {
         Visible = true,
-        Radius = 30
+        Radius = 25
     },
     Tracer = {
         Key = "Q",
         Enabled = true,
-        Pred = 0.19,
+        Pred = 0.01,
         Part = "HumanoidRootPart",
         Smoothness = 0.025
     },
@@ -20,6 +20,10 @@ getgenv().KLOX = {
         UnlockedOnDeath = true,
         Shake = true,
         ShakeValue = 45
+    },
+    Macro = {
+        Enabled = true,
+        Keybind = "x"
     },
 }
 
@@ -243,3 +247,28 @@ task.spawn(function()
         end
     end
 end)
+
+local Player = game:GetService("Players").LocalPlayer
+            local Mouse = Player:GetMouse()
+            local SpeedGlitch = false
+            Mouse.KeyDown:Connect(function(Key)
+                if getgenv().KLOX.Macro.Enabled == true and Key == getgenv().KLOX.Macro.Keybind then
+                    SpeedGlitch = not SpeedGlitch
+                    if SpeedGlitch == true then
+                        repeat game:GetService("RunService").Heartbeat:wait()
+                            keypress(0x49)
+                            game:GetService("RunService").Heartbeat:wait()
+
+                            keypress(0x4F)
+                            game:GetService("RunService").Heartbeat:wait()
+
+                            keyrelease(0x49)
+                            game:GetService("RunService").Heartbeat:wait()
+
+                            keyrelease(0x4F)
+                            game:GetService("RunService").Heartbeat:wait()
+
+                        until SpeedGlitch == false
+                    end
+                end
+            end)
