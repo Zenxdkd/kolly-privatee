@@ -6,13 +6,13 @@ getgenv().KLOX = {
         ClosestPart = true,
     },
     FOV = {
-        Visible = false,
+        Visible = true,
         Radius = 25
     },
     Tracer = {
         Key = "Q",
         Enabled = true,
-        Pred = 0.01,
+        Pred = 0.19,
         Part = "HumanoidRootPart",
         Smoothness = 0.025
     },
@@ -22,7 +22,7 @@ getgenv().KLOX = {
         ShakeValue = 45
     },
     Macro = {
-        Enabled = true,
+        Enabled = false,
         Keybind = "x"
     },
 }
