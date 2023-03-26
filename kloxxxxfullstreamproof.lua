@@ -6,8 +6,8 @@ getgenv().KLOX = {
         ClosestPart = true,
     },
     FOV = {
-        Visible = true,
-        Radius = 25
+        Visible = false,
+        Radius = 30
     },
     Tracer = {
         Key = "Q",
@@ -22,7 +22,7 @@ getgenv().KLOX = {
         ShakeValue = 45
     },
     Macro = {
-        Enabled = true,
+        Enabled = false,
         Keybind = "x"
     },
 }
