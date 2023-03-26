@@ -1,6 +1,3 @@
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "9XN RUNS U NIGGAS!", Text = "9XN ASKING FOR COMP", Duration = 8,});
-
-
 getgenv().KLOX = {
     Silent = {
         Enabled = true,
@@ -10,22 +7,21 @@ getgenv().KLOX = {
     },
     FOV = {
         Visible = true,
-        Radius = 25
+        Radius = 30
     },
     Tracer = {
         Key = "Q",
         Enabled = true,
-        Pred = 0.01,
+        Pred = 0.19,
         Part = "HumanoidRootPart",
         Smoothness = 0.025
     },
     Misc = {
         UnlockedOnDeath = true,
         Shake = true,
-        ShakeValue = 40
+        ShakeValue = 45
     },
 }
-
 
 local Players, Client, Mouse, RS, Camera =
 game:GetService("Players"),
@@ -39,13 +35,13 @@ Circle.Color = Color3.new(1,1,1)
 Circle.Thickness = 1
 
 local UpdateFOV = function ()
-if (not Circle) then
+    if not (Circle) then
+        return Circle
+    end
+    Circle.Visible = getgenv().KLOX.FOV["Visible"]
+    Circle.Radius = getgenv().KLOX.FOV["Radius"] * 3
+    Circle.Position = Vector2.new(Mouse.X, Mouse.Y)
     return Circle
-end
-Circle.Visible = getgenv().KLOX.FOV["Visible"]
-Circle.Radius = getgenv().KLOX.FOV["Radius"] * 3
-Circle.Position = Vector2.new(Mouse.X, Mouse.Y + (game:GetService("GuiService"):GetGuiInset().Y))
-return Circle
 end
 
 RS.Heartbeat:Connect(UpdateFOV)
