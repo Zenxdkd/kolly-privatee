@@ -1,5 +1,3 @@
-game:GetService("StarterGui"):SetCore("SendNotification", {Title = "9XN RUNS U NIGGAS!", Text = "9XN ASKING FOR COMP", Duration = 4,});
-
 getgenv().KLOX = {
     Silent = {
         Enabled = true,
@@ -62,7 +60,7 @@ end
 
 uwuMisc:Toggle({
 Name = "Shake",
-Default = false,
+Default = true,
 Pointer = "Shake_Enabled",
 Callback = function(v)
 print(v)
@@ -73,7 +71,7 @@ end
 
 uwuMisc:Toggle({
 Name = "UnlockOnDeath",
-Default = false,
+Default = true,
 Pointer = "UnlockOnDeath_Enabled",
 Callback = function(v)
 print(v)
@@ -109,7 +107,7 @@ end
 uwuSettings:Slider({Name = "Shake Value",
 Minimum = 0.5,
 Maximum = 100,
-Default = 45,
+Default = 40,
 Decimals = 0.001,
 Pointer = "AimbotMain_Booty",
 Callback = function(v)
@@ -121,7 +119,7 @@ end
 uwuSettings:Slider({Name = "Tracer Prediction",
 Minimum = 0.001,
 Maximum = 10,
-Default = 0.190,
+Default = 0.19,
 Decimals = 0.001,
 Pointer = "AimbotMain_Booty",
 Callback = function(v)
@@ -133,7 +131,7 @@ end
 uwuSettings:Slider({Name = "Silent Prediction",
 Minimum = 0.10,
 Maximum = 0.195,
-Default = 0.12471,
+Default = 0.128,
 Decimals = 0.001,
 Pointer = "AimbotMain_Booty",
 Callback = function(v)
