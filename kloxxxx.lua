@@ -85,7 +85,7 @@ end
 uwuSettings:Slider({Name = "Smoothness",
 Minimum = 0.001,
 Maximum = 1.5,
-Default = 0.028,
+Default = 0.027,
 Decimals = 0.001,
 Pointer = "AimbotMain_Smoothness",
 Callback = function(v)
@@ -109,7 +109,7 @@ end
 uwuSettings:Slider({Name = "Shake Value",
 Minimum = 0.5,
 Maximum = 100,
-Default = 35,
+Default = 34.91,
 Decimals = 0.001,
 Pointer = "AimbotMain_Booty",
 Callback = function(v)
