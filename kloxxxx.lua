@@ -97,7 +97,7 @@ end
 uwuSettings:Slider({Name = "FOV Radius",
 Minimum = 0.01,
 Maximum = 100,
-Default = 35,
+Default = 25,
 Decimals = 0.01,
 Pointer = "AimbotMain_Radius",
 Callback = function(v)
@@ -109,7 +109,7 @@ end
 uwuSettings:Slider({Name = "Shake Value",
 Minimum = 0.5,
 Maximum = 100,
-Default = 39.9,
+Default = 45,
 Decimals = 0.001,
 Pointer = "AimbotMain_Booty",
 Callback = function(v)
