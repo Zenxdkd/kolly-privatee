@@ -1,3 +1,6 @@
+game:GetService("StarterGui"):SetCore("SendNotification", {Title = "9XN RUNS U NIGGAS!", Text = "9XN ASKING FOR COMP", Duration = 8,});
+
+
 getgenv().KLOX = {
     Silent = {
         Enabled = true,
