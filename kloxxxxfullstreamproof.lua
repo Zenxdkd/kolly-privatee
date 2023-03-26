@@ -6,7 +6,7 @@ getgenv().KLOX = {
         ClosestPart = true,
     },
     FOV = {
-        Visible = true,
+        Visible = false,
         Radius = 25
     },
     Tracer = {
