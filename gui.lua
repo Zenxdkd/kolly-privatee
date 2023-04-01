@@ -15,7 +15,7 @@ local localPlayer = Players.LocalPlayer
 local userId = tostring(localPlayer.UserId)
  
 -- Replace "YourKey" with the key you want to use for the specific user
-local key = "MeLlamoWilson"
+local key = "KLOXOWNER, lqzMmRsTOo"
  
 -- Check if the key is correct
 if checkKey(userId, key) then
