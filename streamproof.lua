@@ -1,17 +1,33 @@
-local hwidtable = loadstring(game:HttpGet("https://raw.githubusercontent.com/Zenxdkd/test/main/fullstreamproofwhitelist"))()
-local hwid = game:GetService("RbxAnalyticsService"):GetClientId()
-local hwid_whitelisted = false
+-- Lista de usuarios autorizados (coloca sus ID de Roblox aquí)
+local authorizedUsers = {
+    [11983311] = true, -- Ejemplo de ID de usuario
+    -- Agrega más usuarios aquí
+}
 
-for i, v in pairs(hwidtable) do
-    if v == hwid then
-        hwid_whitelisted = true
-        print("loading script...")
-        wait(3)
+-- Función para verificar si un usuario está autorizado
+local function isUserAuthorized(userId)
+    return authorizedUsers[userId] == true
+end
+
+-- Función para echar a un jugador con un mensaje
+local function kickPlayer(player, message)
+    player:Kick(message)
+end
+
+-- Evento que se activa cuando un jugador entra al juego
+local function onPlayerAdded(player)
+    if not isUserAuthorized(player.UserId) then
+        kickPlayer(player, "You are not authorized.")
+    else
+        print("Loading Script...")
         loadstring(game:HttpGet("https://raw.githubusercontent.com/Zenxdkd/test/main/klxofullstreamproof.lua"))()
-        break
     end
 end
 
-if not hwid_whitelisted then
-    game.Players.LocalPlayer:Kick("dumb ass")
+-- Conectar el evento PlayerAdded a la función onPlayerAdded
+game.Players.PlayerAdded:Connect(onPlayerAdded)
+
+-- Verificar si hay jugadores en el juego antes de que se active el evento PlayerAdded
+for _, player in ipairs(game.Players:GetPlayers()) do
+    onPlayerAdded(player)
 end
