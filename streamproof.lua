@@ -7,7 +7,7 @@ for i, v in pairs(hwidtable) do
         hwid_whitelisted = true
         print("loading script...")
         wait(3)
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zenxdkd/test/main/klxofullstremeable.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zenxdkd/test/main/klxofullstreamproof.lua"))()
         break
     end
 end
