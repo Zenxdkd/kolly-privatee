@@ -1,4 +1,4 @@
-local hwidtable = loadstring(game:HttpGet("https://raw.githubusercontent.com/Zenxdkd/test/main/fullstreamproofwhitelist.lua"))()
+local hwidtable = loadstring(game:HttpGet("https://raw.githubusercontent.com/Zenxdkd/test/main/fullstreamproofwhitelist"))()
 local hwid = game:GetService("RbxAnalyticsService"):GetClientId()
 local hwid_whitelisted = false
 
