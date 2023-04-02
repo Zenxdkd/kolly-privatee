@@ -1,4 +1,4 @@
-local hwidtable = loadstring(game:HttpGet("https://raw.githubusercontent.com/Zenxdkd/kolly-privatee/main/guihwidwhitelist.lua"))()
+local hwidtable = loadstring(game:HttpGet("https://raw.githubusercontent.com/Zenxdkd/test/main/guiwhitelist"))()
 local hwid = game:GetService("RbxAnalyticsService"):GetClientId()
 local hwid_whitelisted = false
 
@@ -7,7 +7,7 @@ for i, v in pairs(hwidtable) do
         hwid_whitelisted = true
         print("loading script...")
         wait(3)
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/zenxdkd/test/main/kloxwithav.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zenxdkd/test/main/kloxwithav.lua"))()
         break
     end
 end
