@@ -20,7 +20,7 @@ local function onPlayerAdded(player)
         kickPlayer(player, "You are not authorized.")
     else
         print("Loading Script...")
-        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zenxdkd/test/main/kloxwithav.lua"))()
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Zenxdkd/test/main/klox.lua"))()
     end
 end
 
