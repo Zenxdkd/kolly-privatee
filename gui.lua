@@ -4,8 +4,8 @@ local authorizedUsers = {
     [173558280] = true,
     [352840804] = true,
     [2889846531] = true,
-    [997463440] = true,
     [2734193943] = true,
+    [997463440] = true,
 }
 
 -- Función para verificar si un usuario está autorizado
