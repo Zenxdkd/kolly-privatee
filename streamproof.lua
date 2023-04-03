@@ -1,6 +1,6 @@
 -- Lista de usuarios autorizados (coloca sus ID de Roblox aquí)
 local authorizedUsers = {
-    [1198331] = true, -- Ejemplo de ID de usuario
+    [11983311] = true, -- Ejemplo de ID de usuario
     [173558280] = true,
     [352840804] = true,
     [2889846531] = true,
