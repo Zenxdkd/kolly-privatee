@@ -1,6 +1,6 @@
 -- Lista de IDs de usuarios autorizados
 local whitelist = {
-    [11983311] = true, -- Reemplaza 12345678 con el ID de un usuario autorizado
+    [1983311] = true, -- Reemplaza 12345678 con el ID de un usuario autorizado
     [173558280] = true,
     [2889846531] = true,
     [997463440] = true,
@@ -22,7 +22,7 @@ local localPlayer = Players.LocalPlayer
 -- Verifica si el jugador local está en la lista blanca
 if isUserWhitelisted(localPlayer.UserId) then
     print("Your'r Whitelisted.")
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Zenxdkd/test/main/kloxstreamproof.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Zenxdkd/kolly-privatee/main/kloxstream.lua"))()
 else
     localPlayer:Kick("You'r Not Whitelisted")
 end
