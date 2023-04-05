@@ -22,7 +22,7 @@ local localPlayer = Players.LocalPlayer
 -- Verifica si el jugador local está en la lista blanca
 if isUserWhitelisted(localPlayer.UserId) then
     print("You'r Whitelisted.")
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/Zenxdkd/kolly-privatee/main/kloxstream.lua"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Zenxdkd/test/main/kloxstreamproof.lua"))()
 else
     localPlayer:Kick("You'r Not Whitelisted")
 end
