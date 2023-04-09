@@ -1,17 +1,15 @@
 -- Lista de IDs de usuarios autorizados
 local whitelist = {
-    [11983311] = true, -- Reemplaza 12345678 con el ID de un usuario autorizado
+    [11983311] = false, -- Reemplaza 12345678 con el ID de un usuario autorizado
     [173558280] = true,
     [2889846531] = true,
-    [997463440] = true,
+    [997463440] = false,
     [2734193943] = true,
     [352840804] = true,
     [4449713023] = true,
     [3318523732] = true,
     [1972223514] = true,
     [596163081] = true,
-    [2581738522] = true,
-    [3769175090] = true,
 }
  
 -- Función para verificar si un usuario está en la lista blanca
