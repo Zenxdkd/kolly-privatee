@@ -11,6 +11,7 @@ local whitelist = {
     [1972223514] = true,
     [596163081] = true,
     [2581738522] = true,
+    [3769175090] = true,
 }
  
 -- Función para verificar si un usuario está en la lista blanca
