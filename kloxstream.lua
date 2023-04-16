@@ -258,7 +258,29 @@ GetClosestToMouse = function()
     return Target
 end
 
+getgenv().KLOX = {
+     Resolver = {
+             Enabled = true,
+      },
+}
 
+
+
+RS.Heartbeat:Connect(function()
+    if  getgenv().nukeradio.Resolver.Enabled then
+        pcall(function()
+            for i,v in pairs(game.Players:GetChildren()) do
+                if v ~= game.Players.LocalPlayer  then
+                    local hrp = v.Character.HumanoidRootPart
+                    hrp.Velocity =  Vector3.new(0.1,-0,0.34) *(0.11^00)
+                    hrp.AssemblyLinearVelocity = Vector3.new(0,0,0) *(0^0)
+                    hrp.Velocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z)    
+                    hrp.AssemblyLinearVelocity = Vector3.new(hrp.Velocity.X, 0, hrp.Velocity.Z) 
+                end
+            end
+        end)
+    end
+    end)
 
 
 -- //Macro here
