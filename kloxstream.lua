@@ -258,23 +258,7 @@ GetClosestToMouse = function()
     return Target
 end
 
-if  getgenv().nukeradio.Resolver.Enabled then
-    shared.lastpos = nil
-shared.velocity = nil
-RS.Heartbeat:connect(function(step)
-    if getgenv().Nemesis.Resolver.Enabled and Nemesishook then
-        local lastPos = shared.lastpos
-        if not lastPos or lastPos == nil then
-            shared.lastpos = Nemesishook.Character:GetPivot().p
-            return
-        end
-        local char = Nemesishook.Character
 
-        
-        shared.velocity = (Nemesishook.Character:GetPivot().p - lastPos) / step
-        shared.lastpos = Nemesishook.Character:GetPivot().p
-    end
-end)
 
 
 -- //Macro here
@@ -323,13 +307,3 @@ local Player = game:GetService("Players").LocalPlayer
                 end
             end
         end)
-
-
-
-
--- //Fps unlocker
-local fps = 1200
- 
-    if setfpscap then
-        setfpscap(fps)
-end
