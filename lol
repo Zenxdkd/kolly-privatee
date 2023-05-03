@@ -1,5 +1,5 @@
---a
-local SToggle = false
+local uwuSilentToggle = uwuNukeradio.Silent.Keycode
+local uwuSilent = uwuNukeradio.Silent.Enabled
 
 -- //SILENT + FOV
 
@@ -18,8 +18,8 @@ local UpdateFOV = function ()
     if (not Circle) then
         return Circle
     end
-    Circle.Visible = nukeradio.FOV["Visible"]
-    Circle.Radius = nukeradio.FOV["Radius"] * 3
+    Circle.Visible = Nukeradio.FOV["Visible"]
+    Circle.Radius = Nukeradio.FOV["Radius"] * 3
     Circle.Position = Vector2.new(Mouse.X, Mouse.Y)
     return Circle
 end
@@ -84,8 +84,8 @@ local Prey
 task.spawn(function ()
     while task.wait() do
         if Prey then
-            if nukeradio.Silent.Enabled and nukeradio.Silent.ClosestPart == true then
-                nukeradio.Silent["Part"] = tostring(GetClosestBodyPart(Prey.Character))
+            if Nukeradio.Silent.Enabled and Nukeradio.Silent.ClosestPart == true then
+                Nukeradio.Silent["Part"] = tostring(GetClosestBodyPart(Prey.Character))
             end
         end
     end
@@ -93,7 +93,7 @@ end)
 
 -- resolver
 
-if nukeradio.Silent.Enabled
+if Nukeradio.Silent.Enabled
     if not uwuCheckAnti(STarget) then
         mainevent:FireServer(namecalltype, STarget.Character[SPart].Position + (STarget.Character[SPart].Velocity * uwuSilentMain.Prediction))
     else
@@ -106,13 +106,13 @@ local backupindex = grmt.__index
 setreadonly(grmt, false)
 
 grmt.__index = newcclosure(function(self, v)
-    if (nukeradio.Silent.Enabled and Mouse and tostring(v) == "Hit") then
+    if (Nukeradio.Silent.Enabled and Mouse and tostring(v) == "Hit") then
 
         Prey = ClosestPlrFromMouse()
 
         if Prey then
-            local endpoint = game.Players[tostring(Prey)].Character[nukeradio.Silent["Part"]].CFrame + (
-                game.Players[tostring(Prey)].Character[nukeradio.Silent["Part"]].Velocity * nukeradio.Silent.Pred
+            local endpoint = game.Players[tostring(Prey)].Character[Nukeradio.Silent["Part"]].CFrame + (
+                game.Players[tostring(Prey)].Character[Nukeradio.Silent["Part"]].Velocity * Nukeradio.Silent.Pred
             )
             return (tostring(v) == "Hit" and endpoint)
         end
@@ -128,9 +128,9 @@ local Plr
 
 
 Mouse.KeyDown:Connect(function(Key)
-    local Keybind = getgenv().nukeradio.Tracer.Key:lower()
+    local Keybind = getgenv().Nukeradio.Tracer.Key:lower()
     if (Key == Keybind) then
-        if getgenv().nukeradio.Tracer.Enabled == true then
+        if getgenv().Nukeradio.Tracer.Enabled == true then
             IsTargetting = not IsTargetting
             if IsTargetting then
                 Plr = GetClosest()
@@ -209,29 +209,29 @@ function GetNearestPartToCursorOnCharacter(character)
 end
 
 game.RunService.Heartbeat:Connect(function()
-    if getgenv().nukeradio.Tracer.Enabled == true and Plr and Plr.Character ~= nil then
-        if getgenv().nukeradio.Misc.UnlockedOnDeath then
+    if getgenv().Nukeradio.Tracer.Enabled == true and Plr and Plr.Character ~= nil then
+        if getgenv().Nukeradio.Misc.UnlockedOnDeath then
             if Plr.Character.BodyEffects["K.O"].Value then Plr = nil end
         end
-        if getgenv().nukeradio.Misc.Shake then
-            local Main = CFrame.new(Camera.CFrame.p,Plr.Character[getgenv().nukeradio.Tracer.Part].Position + Plr.Character[getgenv().nukeradio.Tracer.Part].Velocity * getgenv().nukeradio.Tracer.Pred +
+        if getgenv().Nukeradio.Misc.Shake then
+            local Main = CFrame.new(Camera.CFrame.p,Plr.Character[getgenv().Nukeradio.Tracer.Part].Position + Plr.Character[getgenv().Nukeradio.Tracer.Part].Velocity * getgenv().Nukeradio.Tracer.Pred +
             Vector3.new(
-                math.random(-getgenv().nukeradio.Misc.ShakeValue, getgenv().nukeradio.Misc.ShakeValue),
-                math.random(-getgenv().nukeradio.Misc.ShakeValue, getgenv().nukeradio.Misc.ShakeValue),
-                math.random(-getgenv().nukeradio.Misc.ShakeValue, getgenv().nukeradio.Misc.ShakeValue)
+                math.random(-getgenv().Nukeradio.Misc.ShakeValue, getgenv().Nukeradio.Misc.ShakeValue),
+                math.random(-getgenv().Nukeradio.Misc.ShakeValue, getgenv().Nukeradio.Misc.ShakeValue),
+                math.random(-getgenv().Nukeradio.Misc.ShakeValue, getgenv().Nukeradio.Misc.ShakeValue)
             ) * 0.1)
-            Camera.CFrame = Camera.CFrame:Lerp(Main, getgenv().nukeradio.Tracer.Smoothness, Enum.EasingStyle.Elastic, Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
+            Camera.CFrame = Camera.CFrame:Lerp(Main, getgenv().Nukeradio.Tracer.Smoothness, Enum.EasingStyle.Elastic, Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
         else
-            local Main = CFrame.new(Camera.CFrame.p,Plr.Character[getgenv().nukeradio.Tracer.Part].Position + Plr.Character[getgenv().nukeradio.Tracer.Part].Velocity * getgenv().nukeradio.Tracer.Pred)
-            Camera.CFrame = Camera.CFrame:Lerp(Main, getgenv().nukeradio.Tracer.Smoothness, Enum.EasingStyle.Elastic, Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
+            local Main = CFrame.new(Camera.CFrame.p,Plr.Character[getgenv().Nukeradio.Tracer.Part].Position + Plr.Character[getgenv().Nukeradio.Tracer.Part].Velocity * getgenv().Nukeradio.Tracer.Pred)
+            Camera.CFrame = Camera.CFrame:Lerp(Main, getgenv().Nukeradio.Tracer.Smoothness, Enum.EasingStyle.Elastic, Enum.EasingDirection.InOut, Enum.EasingStyle.Sine, Enum.EasingDirection.Out)
         end
     end
 end)
 
 task.spawn(function()
     while task.wait() do
-        if getgenv().nukeradio.Tracer.Enabled and Plr ~= nil and (Plr.Character) then
-            getgenv().nukeradio.Tracer.Part = tostring(GetNearestPartToCursorOnCharacter(Plr.Character))
+        if getgenv().Nukeradio.Tracer.Enabled and Plr ~= nil and (Plr.Character) then
+            getgenv().Nukeradio.Tracer.Part = tostring(GetNearestPartToCursorOnCharacter(Plr.Character))
         end
     end
 end)
@@ -241,7 +241,7 @@ end)
 -- //Resolver + wallcheck here
 
 local WallCheck = function(destination, ignore)
-    if getgenv().nukeradio.Misc.WallCheck then
+    if getgenv().Nukeradio.Misc.WallCheck then
         local Origin = Camera.CFrame.p
         local CheckRay = Ray.new(Origin, destination - Origin)
         local Hit = game.workspace:FindPartOnRayWithIgnoreList(CheckRay, ignore)
@@ -280,7 +280,7 @@ getgenv().KLOX = {
 
 
 RS.Heartbeat:Connect(function()
-    if  getgenv().nukeradio.Resolver.Enabled then
+    if  getgenv().Nukeradio.Resolver.Enabled then
         pcall(function()
             for i,v in pairs(game.Players:GetChildren()) do
                 if v ~= game.Players.LocalPlayer  then
@@ -303,7 +303,7 @@ local Player = game:GetService("Players").LocalPlayer
         local Mouse = Player:GetMouse()
         local SpeedGlitch = false
         Mouse.KeyDown:Connect(function(Key)
-            if getgenv().nukeradio.Macro.Type == "3Person" and getgenv().nukeradio.Macro.Enabled == true and Key == getgenv().nukeradio.Macro.Keybind then
+            if getgenv().Nukeradio.Macro.Type == "3Person" and getgenv().Nukeradio.Macro.Enabled == true and Key == getgenv().Nukeradio.Macro.Keybind then
                 SpeedGlitch = not SpeedGlitch
                 if SpeedGlitch == true then
                     repeat game:GetService("RunService").Heartbeat:wait()
@@ -330,7 +330,7 @@ local Player = game:GetService("Players").LocalPlayer
         local Mouse = Player:GetMouse()
         local SpeedGlitch = false
         Mouse.KeyDown:Connect(function(Key)
-            if getgenv().nukeradio.Macro.Type == "1Person" and getgenv().nukeradio.Macro.Enabled == true and Key == getgenv().nukeradio.Macro.Keybind then
+            if getgenv().Nukeradio.Macro.Type == "1Person" and getgenv().Nukeradio.Macro.Enabled == true and Key == getgenv().Nukeradio.Macro.Keybind then
                 SpeedGlitch = not SpeedGlitch
                 if SpeedGlitch == true then
                     repeat game:GetService("RunService").Heartbeat:wait()
@@ -344,41 +344,16 @@ local Player = game:GetService("Players").LocalPlayer
         end)
 
 
--- anti aim viewer
-
-local function uwuCheckAnti(targ) -- // Anti-aim detection
-    if (targ.Character.HumanoidRootPart.Velocity.Y < -5 and targ.Character.Humanoid:GetState() ~= Enum.HumanoidStateType.Freefall) or targ.Character.HumanoidRootPart.Velocity.Y < -50 then
-        return true
-    elseif targ and (targ.Character.HumanoidRootPart.Velocity.X > 35 or targ.Character.HumanoidRootPart.Velocity.X < -35) then
-        return true
-    elseif targ and targ.Character.HumanoidRootPart.Velocity.Y > 60 then
-        return true
-    elseif targ and (targ.Character.HumanoidRootPart.Velocity.Z > 35 or targ.Character.HumanoidRootPart.Velocity.Z < -35) then
-        return true
-    else
-        return false
-    end
-end
 
 
 -- togle
 
-uis.InputBegan:Connect(function(k,t)
-    if not t then
-        print("hello")
-
-        elseif k.KeyCode == Enum.KeyCode[nukeradio.Silent.Toggle:upper()]
-            if SToggle then
-                SToggle = false
-                if uwuMain.Notifications then
-                    SendNotification("silent disabled")
-                end
-            else
-                SToggle = true
-                if uwuMain.Notifications then
-                    SendNotification("silent enabled")
-                end
-            end
+game:GetService("UserInputService").InputBegan:Connect(function(input, gameProcessedEvent)
+    if not gameProcessedEvent then
+        if input.KeyCode == uwuSilentToggle then
+            if uwuSilent == true then
+                uwuSilent = false
+            print("Nukeradio is now disbaled")
         end
     end
 end)
